@@ -1,0 +1,4 @@
+8.8.8.8:google-dns
+74.125.131.93:youtube
+80.72.113.196:sb-es-61-mikrotik
+#80.72.112.28:cisa
