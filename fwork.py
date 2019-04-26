@@ -75,8 +75,10 @@ class ConfigFile:
 
         for line in text_config:
             if line.startswith('#') or line.startswith(';'):
+                print(line, ' - it line was passed')
                 pass
             else:
+                print(line, ' - it line was added to config')
                 config.append({'host': line.split(':')[0], 'description': line.split(':')[1]})
 
         return config

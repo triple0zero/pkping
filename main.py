@@ -10,12 +10,17 @@ cf = ConfigFile()
 
 pp = Pkping()
 r = []
+rh = RHandler()
 for i in range(10):
     r = pp.get_results(cf.hosts)
     print('-'*5, 'result by multiping for all hosts', '-'*5, '\n')
     pprint(r)
+    print('-' * 5, 'Create RHandler', '-' * 5, '\n')
+    rh.add_result_to_general_array(r)
+    for host in cf.hosts:
+        rh.get_lost_percent(host)
 
-print('-'*5, 'Create RHandler', '-'*5, '\n')
-rh = RHandler(r)
-for host in cf.hosts:
-    rh.get_lost_percent(host)
+# print('-'*5, 'Create RHandler', '-'*5, '\n')
+# rh = RHandler(r)
+# for host in cf.hosts:
+#     rh.get_lost_percent(host)
