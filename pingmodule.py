@@ -22,4 +22,3 @@ class Pkping:
                 self.results.append({'host': host, 'if_answer': False})
 
         return self.results
-
