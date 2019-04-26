@@ -21,4 +21,7 @@ class Pkping:
             if no_responses:
                 results.append({'host': host, 'if_answer': False})
 
+        if len(no_responses) == 0:
+            sleep(1)
+
         return results
