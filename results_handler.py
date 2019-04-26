@@ -34,9 +34,21 @@ class RHandler:
             else:
                 average = '-'
             print(f'host: {host}, lost percent: {lost_p}, average: {average}')
+            self.print_respond(rlist_for_host)
             return lost_p, average
         else:
-            return print('Error: Not unknown host')
+            return print('Error: unknown host')
+
+    def print_respond(self, array):
+        responds = ''
+        for line in array:
+            # pprint(line)
+            if line['if_answer']:
+                responds += '!'
+            else:
+                responds += '.'
+        print(responds)
+
 
     # def resort(self, host):
     #     return
